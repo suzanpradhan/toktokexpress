@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Category {
   String categoryName;
-  Color color;
+  Color color; //
   String imageUrl;
 
   Category({this.categoryName, this.color, this.imageUrl});
