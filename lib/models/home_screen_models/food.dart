@@ -1,45 +1,46 @@
 class Food {
-  String foodName;
-  double rating;
-  int totalRating;
-  int priceInCents;
-  String imageUrl;
+  int? id;
+  String? foodName;
+  double? rating;
+  String? sku;
+  String? description;
+  Map? menu;
+  List? subtypes;
+  List? addons;
+  int? managerID;
+  int? totalRating;
+  double? priceInCents;
+  String? imageUrl;
 
   Food(
-      {this.foodName,
+      {this.id,
+      this.foodName,
+      this.managerID,
+      this.description,
+      this.menu,
+      this.subtypes,
+      this.addons,
+      this.sku,
       this.imageUrl,
       this.priceInCents,
       this.rating,
       this.totalRating});
-}
 
-List<Food> foodData = <Food>[
-  Food(
-      foodName: "Thai Food",
-      imageUrl:
-          "https://www.helpguide.org/wp-content/uploads/fast-foods-candy-cookies-pastries-768.jpg",
-      priceInCents: 1200,
-      rating: 4.8,
-      totalRating: 1500),
-  Food(
-      foodName: "Thai Food",
-      imageUrl:
-          "https://www.helpguide.org/wp-content/uploads/fast-foods-candy-cookies-pastries-768.jpg",
-      priceInCents: 1200,
-      rating: 4.8,
-      totalRating: 1500),
-  Food(
-      foodName: "Thai Food",
-      imageUrl:
-          "https://www.helpguide.org/wp-content/uploads/fast-foods-candy-cookies-pastries-768.jpg",
-      priceInCents: 1200,
-      rating: 4.8,
-      totalRating: 1500),
-  Food(
-      foodName: "Thai Food",
-      imageUrl:
-          "https://www.helpguide.org/wp-content/uploads/fast-foods-candy-cookies-pastries-768.jpg",
-      priceInCents: 1200,
-      rating: 4.8,
-      totalRating: 1500),
-];
+  factory Food.fromDbtoModel(Map data) {
+    print(data["name"]);
+    return Food(
+      managerID: data['manager'],
+      id: data['id'],
+      foodName: data['name'],
+      sku: data['sku'],
+      addons: data['addons'],
+      subtypes: data['subTypes'],
+      description: data['description'],
+      imageUrl: data['imageURL'],
+      menu: data['menuCollection'],
+      priceInCents: data['amountInCents'],
+      rating: data['rating'] ?? 0.00,
+      // totalRating: data['']);
+    );
+  }
+}

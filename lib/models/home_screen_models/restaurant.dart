@@ -1,9 +1,9 @@
 class Restaurant {
-  int index;
-  String restaurantName;
-  String imageUrl;
-  List<String> restaurantTypes;
-  int rating;
+  int? index;
+  String? restaurantName;
+  String? imageUrl;
+  List<String>? restaurantTypes;
+  int? rating;
 
   Restaurant(
       {this.index,

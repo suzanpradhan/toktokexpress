@@ -31,7 +31,7 @@ void foodModalBottomSheet(context, Food _foodDetails) {
                                   image: DecorationImage(
                                       fit: BoxFit.cover,
                                       image:
-                                          NetworkImage(_foodDetails.imageUrl)),
+                                          NetworkImage(_foodDetails.imageUrl!)),
                                 )),
                             SizedBox(
                               width: 14,
@@ -41,7 +41,7 @@ void foodModalBottomSheet(context, Food _foodDetails) {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(_foodDetails.foodName,
+                                  Text(_foodDetails.foodName!,
                                       style: TextStyle(fontSize: 18)),
                                   Row(
                                     children: [

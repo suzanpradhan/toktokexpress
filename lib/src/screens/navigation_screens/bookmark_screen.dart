@@ -52,7 +52,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                 image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image: NetworkImage(
-                                        popularNearYouData[index].imageUrl))),
+                                        popularNearYouData[index].imageUrl!))),
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),
@@ -63,7 +63,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      popularNearYouData[index].restaurantName,
+                                      popularNearYouData[index].restaurantName!,
                                       style: TextStyle(fontSize: 18),
                                     ),
                                     Row(

@@ -4,7 +4,7 @@ import 'package:toktok/models/home_screen_models/restaurant.dart';
 import 'package:toktok/src/widgets/food/food_add_to_cart.dart';
 
 class RestaurantDetail extends StatefulWidget {
-  final Restaurant restaurant;
+  final Restaurant? restaurant;
 
   RestaurantDetail({this.restaurant});
   @override
@@ -13,7 +13,7 @@ class RestaurantDetail extends StatefulWidget {
 
 class _RestaurantDetailState extends State<RestaurantDetail>
     with SingleTickerProviderStateMixin {
-  TabController _foodCategoryTabController;
+  TabController? _foodCategoryTabController;
 
   @override
   void initState() {
@@ -157,7 +157,7 @@ class _RestaurantDetailState extends State<RestaurantDetail>
           decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(widget.restaurant.imageUrl))),
+                  image: NetworkImage(widget.restaurant!.imageUrl!))),
         ),
         SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -189,7 +189,7 @@ class _RestaurantDetailState extends State<RestaurantDetail>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      widget.restaurant.restaurantName,
+                                      widget.restaurant!.restaurantName!,
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 2,
                                       style: TextStyle(
@@ -200,7 +200,7 @@ class _RestaurantDetailState extends State<RestaurantDetail>
                                       height: 5,
                                     ),
                                     Text(
-                                      widget.restaurant.restaurantTypes
+                                      widget.restaurant!.restaurantTypes!
                                           .join(", "),
                                       style: TextStyle(
                                           color: Color(0xffa1a1a1),
@@ -294,7 +294,7 @@ class _RestaurantDetailState extends State<RestaurantDetail>
                                           image: DecorationImage(
                                               fit: BoxFit.cover,
                                               image: NetworkImage(
-                                                  item[index].imageUrl)),
+                                                  item[index].imageUrl!)),
                                         )),
                                     SizedBox(
                                       width: 10,
@@ -306,7 +306,7 @@ class _RestaurantDetailState extends State<RestaurantDetail>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Text(item[index].foodName,
+                                          Text(item[index].foodName!,
                                               style: TextStyle(fontSize: 16)),
                                           Row(
                                             children: [
